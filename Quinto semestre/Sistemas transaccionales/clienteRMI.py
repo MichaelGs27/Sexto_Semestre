@@ -1,21 +1,20 @@
-import Pyro5.api #Se importa Pyro5 para poder consumir servicios remotos 
+import Pyro5.api
 
-#Solicita al usuario que introduzca el URI del servidor 
-uri = input("Ingrese el URI del servicio modalidad: ")
+#solicito al usuaario que introduzca el URI del servidor
+uri = input("Introduce el URI del servicio TiposID:  ")
 
-#Crea un "proxy" que permite al cliente llamar métodos remosots como si fueran locales
+#Crea un proxy que permite al cliente llamar metodos remotos como si fueran locales
 tipos_id_remoto = Pyro5.api.Proxy(uri)
 
 try:
-    #Solicita al usuario que ingrese el código que desea consultar 
-    codigo = input("Ingrese el codigo de tipo de identificación (ej: CC, TI, CE, PA): ")
+    #solicita al usuario que ingrese el codigo que desea consultar
+    codigo = input("Ingrese el codigo deltipo de identificacion (ej: CC,TI,CE,PA):  ")
 
-    #Llama remotamente al metodo consultar_descripcion pasando el codigo 
+    #llama remotamente al metodo consultar_descripcion pasanado el codigo
     descripcion = tipos_id_remoto.consultar_descripcion(codigo.upper())
-    
-    #Muestra la descripción recibida desde el servidor 
-    print(f"descripcion: {descripcion}")
-    
+
+    #Muestra la despcripcionn recibida desde el servidor
+    print(f"Descripcion:{descripcion}")
 except Exception as e:
-    #Captura y muestra cualquier error ocurrido durante la comunicacion 
-    print("Error: consultando el servicio remoto:",e)
+    #Captura y muestra cualquier error ocurrido durante la comunicacion o ejecucion remota
+    print(f"Error consultando el servicio remoto: {e}")

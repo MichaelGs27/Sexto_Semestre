@@ -20,6 +20,16 @@ try:
         # Seleccionar la base de datos
         cursor.execute("USE Parqueadero")
 
+        # Crear tabla usuario   
+        create_table_usuario = """ 
+        CREATE TABLE IF NOT EXISTS Usuario(
+            cIdUsuario INT AUTO_INCREMENT,
+            cNomUsuario VARCHAR(45) NOT NULL,
+            cContraseña Varchar(200) NOT NULL,
+            PRIMARY KEY (cIdUsuario)
+        )
+        """
+
         # Crear tabla Vehiculo
         create_table_vehiculo = """
         CREATE TABLE IF NOT EXISTS Vehiculo (
@@ -42,6 +52,7 @@ try:
         """
         cursor.execute(create_table_espacio)
         print("Tabla Espacio creada exitosamente o ya existe.")
+        
         #Crear tabla usuario
         create_table_usuario = """ 
         CREATE TABLE IF NOT EXISTS Usuario(

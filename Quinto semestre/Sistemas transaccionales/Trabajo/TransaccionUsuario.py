@@ -22,8 +22,8 @@ try:
         # Insertar los registros 
         insert_queries = [
             #Tipos de identificacion
-            "INSERT INTO usuario (cIdUsuario, cNomUsuario, cContraseña ) VALUES ('1', 'Michael0', 'Michael.10');",
-            "INSERT INTO usuario (cIdUsuario, cNomUsuario, cContraseña) VALUES ('2', 'Oscar', 'Oscar0');",
+            "INSERT INTO usuario (cIdUsuario, cNomUsuario, cContraseña ) VALUES ('1', 'Admin', 'Admin1');",
+            "INSERT INTO usuario (cIdUsuario, cNomUsuario, cContraseña) VALUES ('2', 'Trabajador', 'Trabajador1');",
         ]
         
         for query in insert_queries:
