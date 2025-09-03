@@ -1,9 +1,0 @@
-git init (Crea repositorio git nuevo)
-code . (Abre visual)
-git status (muestra que falta para subir al repositorio o si no hay nada por subir)
-git add . (Agrega todos los archivos)
-git commit -m "Mensaje" (Commit para subir al repositorio)
-git log (Se revisa el historial de los commit)
-git checkout (codigo) 
-git branch 
-git push (subir repositorio)
