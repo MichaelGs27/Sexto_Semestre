@@ -1,12 +1,6 @@
 import requests
 # 1. Función de búsqueda binaria
 def busqueda_binaria(lista_ordenada: list, objetivo: str) -> bool | int:
-    """
-    Busca un objetivo en una lista ordenada utilizando el algoritmo de 
-    búsqueda binaria.
-
-    Retorna el índice del objetivo si se encuentra, o False si no está.
-    """
     izquierda, derecha = 0, len(lista_ordenada) - 1
     while izquierda <= derecha:
         medio = (izquierda + derecha) // 2 
