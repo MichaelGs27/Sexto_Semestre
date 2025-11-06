@@ -7,7 +7,7 @@ try:
         host="localhost",
         port="3306",
         user="root",
-        password=""
+        password="Michael.10"
     )
 
     if connection.is_connected():
