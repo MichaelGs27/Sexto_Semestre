@@ -1,0 +1,117 @@
+definir que servicios tiene su proyecto 
+generar el listado de las url y la accion de la url
+---------
+nodejs - descargar e instalar las extensiones en visual
+npm
+git
+jira 
+GitHub
+---------------------
+que permite expresar relaciones internas de los objetos mediante predicados y cuantificadores
+ej predicado: todos los estudiantes son responsables 
+existe un numero que es par 
+inferencia: obtener nuevas conclusiones a partir de un conjunto de premisas o conocimientos previos
+1 proposicional) si hace frio entonces uso abrigo 
+p->q
+2) Pedro no va al cine o Maria estudia
+-¬p v q
+1 predicado) para todo x, si x es perro, entonces x ladra 
+A(x) perro -> ladra(x)
+2) existe un estudiante que aprobó el examen 
+3(x) Estudiante n AproboExamen(x)
+
+si llueve, la calle se moja 
+
+PREMISA: Todos los humanos son mortales 
+
+Socrates es humano 
+VARIABLE P = TRUE
+VARIABLE Q = F
+
+IMPLICA  =
+-------------
+arquitectura de datos - 16-09-2025
+NoSQL - No datos estructurados - Sistema distribuido - teorema CAP
+-----
+Desarrollo de plataforma 
+código de ejecución
+nodemon src/app.js
+usuarios -TiposDoc - FAQ
+----------------------------
+18/09/2025
+IA:
+que son los sistemas expertos:
+Progamas informáticos que imitan el razonamiento humano especializados para resilver problemas complejos en dominios específicos 
+características: 
+Utilizan conocimiento experto codificado y reglas de inferencia para tomar decisiones como lo haría un especialista humano
+Arquitectura:
+Base de conocimientos: repositorio central que contiene hechos, reglas y heurísticas del dominio especifico 
+si (condición) entonces (conclusion) 
+
+Motor de inferecia: componente que aplica algoritmos de razonamiento para procesar la información
+depende de como este organizado la base de conocimientos asi mismo sera el algoritmo de busqueda
+
+Interfaz de Usuario: Permite la comunicación bidireccional entre el sistema y los usuarios finales
+
+Representación del conocimiento:
+reglas de producción 
+redes semanticas 
+marcos (frames) 
+lógica de predicados 
+
+Metodos de inferencia:
+Encadenamiento hacia adelante 
+Encadenamiento hacia atrás 
+Estrategias mixtas
+
+NO = 5 SI = 4
+1. S
+2. S
+3. N
+4. S
+5. N
+6. S
+7. N
+8. S
+9. S
+10. S
+------------------
+que es el aprendizaje automatico
+características
+en donde lo aplico
+aprendizaje supervisado - no supervisado 
+como funciona 
+ejemplos donde se aplica 
+---------------------
+1/10/2025
+Desarrollo 
+middleware = un filtro
+todas las url pasan por ahi 
+------------------
+2/10/2025
+diseño de algoritmos 
+recursividad en programación 
+suma de dígitos de un muero
+Este es un ejercicio fundamental que enseña a aplicar la lógica recursiva a un solo valor numerico, usando operaciones de division y modulo.
+--------------------
+09-10-2025
+en analítica de datos las columnas se llaman variables y las filas observaciones 
+preparar datos:
+si los nombres no están claros toca cambiarlos, no deben tener espacios,
+ 
+1 = momento 1
+2 = momento 2
+3 = 1 (
+4 = INM ( intersemestral)
+tipo
+1 = virtual
+2 = presencial
+variable objetivo es Y  = valoración 
+------------------------- 
+15-10-2025
+desarrollo plataforma 
+nombre principal = React
+ejeuta = npm run dev
+
+
+

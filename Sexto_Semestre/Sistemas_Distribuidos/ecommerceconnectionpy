@@ -1,0 +1,74 @@
+# inicializar_db_mysql.py
+import mysql.connector
+from mysql.connector import errorcode
+
+# --- Configuración de la Base de Datos ---
+# ¡¡IMPORTANTE!! ajustar esto a su configuración local.
+DB_CONFIG = {
+    'user': 'root',
+    'password': 'Michael.10',
+    'host': '127.0.0.1', # localhost
+    'database': 'ecommerce_db',
+    'port': 3306
+    }
+# -----------------------------------------
+
+TABLES = {}
+TABLES['pedidos'] = (
+    "CREATE TABLE `pedidos` ("
+    " `id_pedido` varchar(36) NOT NULL,"
+    " `id_cliente` int NOT NULL,"
+    " `total` decimal(10, 2) NOT NULL,"
+    " `estado` varchar(20) NOT NULL,"
+    " PRIMARY KEY (`id_pedido`)"
+    ") ENGINE=InnoDB")
+
+TABLES['facturas'] = (
+"CREATE TABLE `facturas` ("
+" `id_factura` int NOT NULL AUTO_INCREMENT,"
+" `id_pedido` varchar(36) NOT NULL,"
+" `estado` varchar(20) NOT NULL,"
+" PRIMARY KEY (`id_factura`),"
+" FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`)"
+") ENGINE=InnoDB")
+
+TABLES['envios'] = (
+"CREATE TABLE `envios` ("
+" `id_envio` int NOT NULL AUTO_INCREMENT,"
+" `id_pedido` varchar(36) NOT NULL,"
+" `estado` varchar(20) NOT NULL,"
+" PRIMARY KEY (`id_envio`),"
+" FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`)"
+") ENGINE=InnoDB")
+
+try:
+    print("Conectando a la base de datos MySQL...")
+    cnx = mysql.connector.connect(**DB_CONFIG)
+    cursor = cnx.cursor()
+    print("Conexión exitosa.")
+
+    for table_name in TABLES:
+        table_description = TABLES[table_name]
+        try:
+            print(f"Creando tabla '{table_name}'... ", end='')
+            cursor.execute(table_description)
+        except mysql.connector.Error as err:
+            if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
+                print("ya existe.")
+            else:
+                print(err.msg)
+        else:
+            print("OK")
+
+    cursor.close()
+    cnx.close()
+    print("\nBase de datos lista para usar.")
+except mysql.connector.Error as err:
+    if hasattr(err, 'errno') and err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+        print("Error: Algo está mal con tu usuario o contraseña de MySQL.")
+    elif hasattr(err, 'errno') and err.errno == errorcode.ER_BAD_DB_ERROR:
+        print("Error: La base de datos no existe.")
+    else:
+        print(f"Error de MySQL: {err}")
+
+
